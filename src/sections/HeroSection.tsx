@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useTransform, type MotionValue } from 'framer-motion'
 
 /* ── Partículas doradas ────────────────────── */
 
@@ -17,7 +17,7 @@ function generateParticles(count: number) {
 
 /* ── Balanza SVG ───────────────────────────── */
 
-function JusticeScale({ rotate }: { rotate: ReturnType<typeof useTransform> }) {
+function JusticeScale({ rotate }: { rotate: MotionValue<number> }) {
   return (
     <motion.svg
       style={{

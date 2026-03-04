@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════
+   MATOS MEJÍA & ASOC. — DARK LEGAL LUXURY
+   Sistema de Diseño
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* Fondos oscuros */
+  --bg-black:    #0A0A0A;
+  --bg-dark:     #111111;
+  --bg-card:     #1A1A1A;
+  --bg-section:  #141414;
+
+  /* Dorado — ÚNICO acento */
+  --gold:        #C9A84C;
+  --gold-light:  #E5C56A;
+  --gold-dark:   #A07830;
+  --gold-pale:   rgba(201,168,76,0.12);
+  --gold-glow:   rgba(201,168,76,0.25);
+
+  /* Textos */
+  --text-white:  #F5F0E8;
+  --text-off:    rgba(245,240,232,0.75);
+  --text-muted:  rgba(245,240,232,0.45);
+
+  /* Bordes */
+  --border:      rgba(201,168,76,0.2);
+  --border-dark: rgba(255,255,255,0.06);
+
+  /* Sombras */
+  --shadow-gold: 0 8px 40px rgba(201,168,76,0.2);
+  --shadow-dark: 0 8px 40px rgba(0,0,0,0.5);
+
+  /* Tipografía */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+
+  --text-hero:  clamp(64px, 8vw, 120px);
+  --text-h2:    clamp(40px, 5vw, 72px);
+  --text-h3:    clamp(22px, 2.5vw, 32px);
+  --text-body:  17px;
+  --text-label: 12px;
+
+  --track-display: -0.02em;
+  --track-label:   0.2em;
+}
+
+/* ── Reset & Base ──────────────────────────── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg-black);
+}
+
+/* ── Layout ────────────────────────────────── */
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* ── Buttons ───────────────────────────────── */
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--bg-black);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--bg-black);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+/* ── Partículas doradas (Hero) ─────────────── */
+
+@keyframes gold-particle {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-120px) translateX(30px) rotate(360deg); opacity: 0; }
+}
+
+/* ── Scroll indicator ──────────────────────── */
+
+@keyframes scroll-line {
+  0%   { transform: scaleY(0); opacity: 0; }
+  50%  { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(0); opacity: 0; }
+}
+
+/* ── Scrollbar ─────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
